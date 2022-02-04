@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Break from '../BreakStatement';
 const PrintDay = () => {
     const [selected, setSelected] = useState({
         date: ""
@@ -16,19 +17,19 @@ const PrintDay = () => {
     return (
         <div className="dateWrapper">
             <div className="dateSelect">
-            <input
-                className="dateField"
-                type='date'
-                format="mm/dd/yyyy"
-                value={selected.date}
-                onChange={(e) => Hanldedate(e)}
-                name="date" />
-            <button
-                className="submitBtn"
-                onClick={submitDate}
-            >
-                Submit
-            </button>
+                <input
+                    className="dateField"
+                    type='date'
+                    format="mm/dd/yyyy"
+                    value={selected.date}
+                    onChange={(e) => Hanldedate(e)}
+                    name="date" />
+                <button
+                    className="submitBtn"
+                    onClick={submitDate}
+                >
+                    Submit
+                </button>
             </div>
             {Day ?
                 <p className="dayText">{day}</p>

@@ -1,23 +1,29 @@
-.App{
-  padding:40px;
+.App {
+  padding: 40px;
 }
-.dateWrapper{
+
+.dateWrapper {
   margin: auto;
   width: 50%;
 }
-.dateSelect{
+
+.dateSelect {
   display: flex;
+  margin-bottom: 20px;
 }
-.dateField{
+
+.dateField {
   width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 0px 10px;
-    font-size: 15px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0px 10px;
+  font-size: 15px;
+  margin-right: 15px;
 }
-.submitBtn{
-  width: 100px;
+
+.submitBtn {
+  width: 200px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -25,10 +31,12 @@
   background: #2bb4e2;
   color: #fff;
   font-size: 16px;
-  margin-left: 15px;
   border-radius: 8px;
 }
-.dayText{
+.submitBtn:disabled{
+   background: rgb(187, 184, 184);
+}
+.dayText {
   text-align: center;
   font-size: 15px;
   font-weight: 500;

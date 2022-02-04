@@ -1,11 +1,14 @@
 import './App.css';
-import Break from './BreakStatement';
-import PrintDay from './DayPrint';
+import PrintDay from './component/DayPrint';
+import Break from "./component/BreakStatement/index"
+import MomentPrint from './component/Moment/index';
+import Index from './component/Moment/index';
 function App() {
   return (
     <div className="App">
-      {/* <Break/> */}
-      <PrintDay/>
+     {/* <Break/> */}
+      {/* <PrintDay/> */}
+      <Index/>
     </div>
   );
 }
