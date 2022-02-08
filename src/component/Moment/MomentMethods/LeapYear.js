@@ -4,8 +4,7 @@ const LeapYear = () => {
     const [selected, setSelected] = useState({
         date: ""
     });
-    const [Year, setYear] = useState(false);
-
+    const [Year, setYear] = useState();
     const Hanldedate = (e) => {
         setSelected({ ...selected, [e.target.name]: e.target.value });
     }
@@ -33,9 +32,11 @@ const LeapYear = () => {
                     Leap Year
                 </button>
             </div>
-            <p className="dayText">
-                {Year ? "It is a Leap year" : "It is not a Leap year"}
-            </p>
+            {selected.date ?
+                <p className="dayText">
+                    {Year ? "It is a Leap year" : "It is not a Leap year"}
+                </p>
+                : null}
         </div>
     );
 }
