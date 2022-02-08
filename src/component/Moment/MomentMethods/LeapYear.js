@@ -4,7 +4,6 @@ const LeapYear = () => {
     const [selected, setSelected] = useState({
         date: ""
     });
-    const day = moment(selected.date).format("dddd")
     const [Year, setYear] = useState(false);
 
     const Hanldedate = (e) => {
