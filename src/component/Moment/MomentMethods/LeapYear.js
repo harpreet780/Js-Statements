@@ -16,7 +16,6 @@ const LeapYear = () => {
             setYear(moment(selected.date).isLeapYear());
         }
     }
-    console.log(selected, day, Year, "date");
 
     return (
         <div className="dateWrapper">
@@ -35,9 +34,9 @@ const LeapYear = () => {
                     Leap Year
                 </button>
             </div>
-            {Year ?
-                <p className="dayText">It is a Leap year</p>
-                : <p className="dayText">It is a not Leap year</p>}
+            <p className="dayText">
+                {Year ? "It is a Leap year" : "It is not a Leap year"}
+            </p>
         </div>
     );
 }
