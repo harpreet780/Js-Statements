@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import moment from 'moment'
 const DayGet = () => {
+    const [Day, setDay] = useState(false);
     const [selected, setSelected] = useState({
         date: ""
     });
     const day = moment(selected.date).format("dddd")
-    const [Day, setDay] = useState(false);
     const Hanldedate = (e) => {
         setSelected({ ...selected, [e.target.name]: e.target.value });
     }
