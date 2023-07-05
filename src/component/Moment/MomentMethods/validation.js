@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment'
 const Validation = () => {
-    const [error, setError] = useState();
-    const [start_date, setStart_date] = useState();
+  const [error, setError] = useState("");
+    const [selectDate, setSelectDate]= useState({
+        start_date: null,
+        end_date: null
+    })
+    const [start_date, setStart_date] = useState(null);
+    const [Days, setDays] = useState("");
     const [end_date, setEnd_date] = useState();
-    const [Days, setDays] = useState();
+
     const HanldeStartDate = (e) => {
-        let StartTime = moment(e.target.value).format("MM-DD-YYYY")
+        let StartTime = moment(e?.target.value).format("MM-DD-YYYY")
         setStart_date(StartTime);
     }
     const HanldeEndDate = (e) => {
-        let EndTime = moment(e.target.value).format("MM-DD-YYYY")
+        let EndTime = moment(e?.target.value).format("MM-DD-YYYY")
         setEnd_date(EndTime);
     }
     const submitTime = (e) => {
@@ -29,32 +34,36 @@ const Validation = () => {
         }
     }
     const disable = !start_date || !end_date;
-    // const disable = start_date && end_date ? moment(start_date).isAfter(end_date) : true;
+
+
     return (
         <div className="dateWrapper">
             <div className="dateSelect">
                 <input
                     className="dateField"
                     type='date'
-                    value={start_date}
+                    value={selectDate.start_date}
                     onChange={(e) => {
+                        setSelectDate(e?.target.value)
+                        HanldeStartDate(e)
                         setDays("");
-                        setStart_date(e.target.value)
                     }}
                     name="date" />
                 <input
                     className="dateField"
                     type='date'
-                    value={end_date}
+                    value={selectDate.end_date}
                     onChange={(e) => {
+                        setSelectDate(e?.target.value)
+                        HanldeEndDate(e)
                         setDays("");
-                        setEnd_date(e.target.value)
                     }}
                     name="Date" />
                 <button
                     className="submitBtn"
                     onClick={submitTime}
                     disabled={disable}
+                    style={{cursor: disable && "not-allowed"}}
                 >
                     Caculate
                 </button>
