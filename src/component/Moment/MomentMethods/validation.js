@@ -3,12 +3,12 @@ import moment from 'moment'
 const Validation = () => {
     const [error, setError] = useState();
     const [start_date, setStart_date] = useState();
+    const [end_date, setEnd_date] = useState();
     const [Days, setDays] = useState();
     const HanldeStartDate = (e) => {
         let StartTime = moment(e.target.value).format("MM-DD-YYYY")
         setStart_date(StartTime);
     }
-    const [end_date, setEnd_date] = useState();
     const HanldeEndDate = (e) => {
         let EndTime = moment(e.target.value).format("MM-DD-YYYY")
         setEnd_date(EndTime);
