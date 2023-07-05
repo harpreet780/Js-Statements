@@ -4,9 +4,9 @@ const PrintDay = () => {
     const [selected, setSelected] = useState({
         date: ""
     });
+    const [Day, setDay] = useState(false);
 
     const day = new Date(selected.date).toLocaleDateString('en-us', { weekday: 'long' })
-    const [Day, setDay] = useState(false);
     const Hanldedate = (e) => {
         setSelected({ ...selected, [e.target.name]: e.target.value });
     }
